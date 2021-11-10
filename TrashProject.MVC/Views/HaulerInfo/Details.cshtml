@@ -1,0 +1,58 @@
+﻿@model TrashProject.Models.HaulerInfoModels.HaulerInfoDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HaulerInfoDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HaulerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HaulerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HaulerPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HaulerPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HaulerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HaulerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HaulerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

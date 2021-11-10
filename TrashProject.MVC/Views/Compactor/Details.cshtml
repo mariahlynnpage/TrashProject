@@ -1,0 +1,66 @@
+﻿@model TrashProject.Models.CompactorModels.CompactorDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CompactorDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompactorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompactorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsTrash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsTrash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDryWaste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDryWaste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsContaminated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsContaminated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CompactorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
