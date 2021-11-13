@@ -11,6 +11,7 @@ namespace TrashProject.Models.CompactorModels
     {
         [Key]
         public int CompactorId { get; set; }
+        [Display(Name = "Compactor Name")]
         public string CompactorName { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

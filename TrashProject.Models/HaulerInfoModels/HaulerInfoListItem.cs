@@ -11,6 +11,7 @@ namespace TrashProject.Models.HaulerInfoModels
     {
         [Key]
         public int HaulerId { get; set; }
+        [Display(Name = "Hauler Name")]
         public string HaulerName { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

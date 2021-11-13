@@ -11,8 +11,11 @@ namespace TrashProject.Models.HaulerInfoModels
     {
         [Key]
         public int HaulerId { get; set; }
+        [Display(Name = "Hauler Name")]
         public string HaulerName { get; set; }
+        [Display(Name = "Phone Number")]
         public string HaulerPhoneNumber { get; set; }
+        [Display(Name = "Email")]
         public string HaulerEmail { get; set; }
     }
 }

@@ -11,8 +11,8 @@ namespace TrashProject.Models.PropertyModels
     {
         [Key]
         public int PropertyId { get; set; }
+        [Display(Name = "Property Name")]
         public string PropertyName { get; set; }
-        public string Address { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }

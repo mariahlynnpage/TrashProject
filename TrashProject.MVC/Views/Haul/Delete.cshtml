@@ -1,0 +1,64 @@
+﻿@model TrashProject.Models.HaulModels.HaulDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HaulDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompactorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompactorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HaulerInfoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HaulerInfoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyContactId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyContactId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

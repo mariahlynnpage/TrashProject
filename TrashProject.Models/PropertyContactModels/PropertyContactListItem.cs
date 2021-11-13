@@ -11,8 +11,9 @@ namespace TrashProject.Models.PropertyContactModels
     {
         [Key]
         public int PropertyContactId { get; set; }
-        public string PropContactPosition { get; set; }
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

@@ -10,7 +10,6 @@ namespace TrashProject.Models.HaulModels
 {
     public class HaulEdit
     {
-        [Key]
         public int HaulId { get; set; }
         public int CompactorId { get; set; }
         public int HaulerInfoId { get; set; }

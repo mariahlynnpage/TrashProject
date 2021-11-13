@@ -15,21 +15,21 @@ namespace TrashProject.Data
         [Required]
         public Guid OwnerId { get; set; }
         [ForeignKey("CompactorId")]
-        public virtual Compactor Compactors { get; set; }
+        public virtual Compactor Compactor { get; set; }
         [Display(Name = "Compactor")]
-        public virtual int CompactorId { get; set; }
+        public int CompactorId { get; set; }
         [ForeignKey("HaulerInfoId")]
-        public virtual HaulerInfo HaulerInformation { get; set; }
+        public virtual HaulerInfo HaulerInfo { get; set; }
         [Display(Name = "Hauler")]
-        public virtual int HaulerInfoId { get; set; }
+        public int HaulerInfoId { get; set; }
         [ForeignKey("PropertyId")]
-        public virtual Property Properties { get; set; }
+        public virtual Property Property { get; set; }
         [Display(Name = "Property")]
-        public virtual int PropertyId { get; set; }
+        public int PropertyId { get; set; }
         [ForeignKey("PropertyContactId")]
-        public virtual PropertyContact PropertyContacts { get; set; }
+        public virtual PropertyContact PropertyContact { get; set; }
         [Display(Name = "Property Contact")]
-        public virtual int PropertyContactId { get; set; }
+        public int PropertyContactId { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }

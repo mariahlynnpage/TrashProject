@@ -11,7 +11,9 @@ namespace TrashProject.Models.PropertyModels
     {
         [Key]
         public int PropertyId { get; set; }
+        [Display(Name = "Property Name")]
         public string PropertyName { get; set; }
+        [Display(Name = "Address")]
         public string Address { get; set; }
 
     }

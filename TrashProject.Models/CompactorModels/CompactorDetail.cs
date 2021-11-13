@@ -11,10 +11,14 @@ namespace TrashProject.Models.CompactorModels
     {
         [Key]
         public int CompactorId { get; set; }
+        [Display(Name = "Compactor Name")]
         public string CompactorName { get; set; }
+        [Display(Name = "Is it trash?")]
         public bool IsTrash { get; set; }
-        public bool IsDryWaste { get; set; }
+        [Display(Name = "Is it contaminated?")]
         public bool IsContaminated { get; set; }
+        [Display(Name = "Is it dry waste?")]
+        public bool IsDryWaste { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]

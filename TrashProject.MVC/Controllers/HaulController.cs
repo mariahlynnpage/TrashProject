@@ -12,6 +12,7 @@ namespace TrashProject.MVC.Controllers
 {
     public class HaulController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Haul
         public ActionResult Index()
         {
@@ -21,20 +22,38 @@ namespace TrashProject.MVC.Controllers
             return View(model);
         }
 
-        public ActionResult CreateView()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new HaulService(userId);
-            var model = service.CreateHaulView();
-            return View(model);
-        }
 
         //Add method here VVVV
         //Get
         public ActionResult Create()
         {
-            
-            return View();
+            var viewModel = new HaulCreate();
+
+            viewModel.Compactors = _db.Compactors.Select(model => new SelectListItem
+            {
+                Text = model.CompactorName,
+                Value = model.CompactorId.ToString()
+            }).ToArray();
+
+            viewModel.Properties = _db.Properties.Select(model => new SelectListItem
+            {
+                Text = model.PropertyName,
+                Value = model.PropertyId.ToString()
+            }).ToArray();
+
+            viewModel.PropertyContacts = _db.PropertyContacts.Select(model => new SelectListItem
+            {
+                Text = model.FirstName + " " + model.LastName,
+                Value = model.PropertyContactId.ToString()
+            }).ToArray();
+
+            viewModel.HaulerInformation = _db.HaulerInformation.Select(model => new SelectListItem
+            {
+                Text = model.HaulerName,
+                Value = model.HaulerId.ToString()
+            }).ToArray();
+
+            return View(viewModel);
         }
 
         //Add code here vvvv
@@ -72,20 +91,38 @@ namespace TrashProject.MVC.Controllers
             return service;
         }
 
-        public ActionResult Edit(int id)
+
+
+        public ActionResult Edit(int Id)
         {
-            var service = CreateHaulService();
-            var detail = service.GetHaulById(id);
-            var model =
-                new HaulEdit
-                {
-                    HaulId = detail.HaulId,
-                    CompactorId = detail.CompactorId,
-                    PropertyContactId = detail.PropertyContactId,
-                    PropertyId = detail.PropertyId,
-                    HaulerInfoId = detail.HaulerInfoId
-                };
-            return View(model);
+            var svc = CreateHaulService();
+            var viewModel = svc.GetHaulEditById(Id);
+
+            viewModel.Compactors = _db.Compactors.Select(model => new SelectListItem
+            {
+                Text = model.CompactorName,
+                Value = model.CompactorId.ToString()
+            }).ToArray();
+
+            viewModel.Properties = _db.Properties.Select(model => new SelectListItem
+            {
+                Text = model.PropertyName,
+                Value = model.PropertyId.ToString()
+            }).ToArray();
+
+            viewModel.PropertyContacts = _db.PropertyContacts.Select(model => new SelectListItem
+            {
+                Text = model.FirstName + " " + model.LastName,
+                Value = model.PropertyContactId.ToString()
+            }).ToArray();
+
+            viewModel.HaulerInformation = _db.HaulerInformation.Select(model => new SelectListItem
+            {
+                Text = model.HaulerName,
+                Value = model.HaulerId.ToString()
+            }).ToArray();
+
+            return View(viewModel);
         }
 
         [HttpPost]
