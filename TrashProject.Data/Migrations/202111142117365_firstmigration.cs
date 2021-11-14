@@ -3,7 +3,7 @@ namespace TrashProject.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialmigration : DbMigration
+    public partial class firstmigration : DbMigration
     {
         public override void Up()
         {
