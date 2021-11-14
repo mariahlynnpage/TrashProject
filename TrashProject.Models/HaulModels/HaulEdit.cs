@@ -11,9 +11,13 @@ namespace TrashProject.Models.HaulModels
     public class HaulEdit
     {
         public int HaulId { get; set; }
+        [Display(Name = "Compactor Name")]
         public int CompactorId { get; set; }
+        [Display(Name = "Hauler")]
         public int HaulerInfoId { get; set; }
+        [Display(Name = "Property")]
         public int PropertyId { get; set; }
+        [Display(Name = "Contact who Requests this Haul")]
         public int PropertyContactId { get; set; }
 
         public IEnumerable<SelectListItem> Compactors { get; set; }
